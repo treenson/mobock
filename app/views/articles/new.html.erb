@@ -1,0 +1,19 @@
+<%= form_for(@article,:url => {:action => "create"}, :html => {:multipart => true}) do |f| %>
+<div class="fileupload fileupload-new" data-provides="fileupload">
+	<div class="fileupload-preview thumbnail" style="width: 200px; height: 150px; line-height: 150px;"></div>
+	<div>
+		<span class="btn btn-file">
+			<span class="fileupload-new">Select image</span>
+			<span class="fileupload-exists">Change</span>
+			<%= file_field_tag 'upload[file]', :accept => "image/*", :id => "uploaded_picture" %>
+			<!-- <input type="file" accept="image/*" id="uploaded_picture" /> -->
+		</span>
+		<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+	</div>
+</div>
+	제목 : <%= f.text_field :title  %> <br>
+	저자 : <%= f.text_field :author %> <br>
+	내용 : <%= f.text_area :content, :id => "content" %> <br>
+	<%= submit_tag("등록", :class => 'btn') %>
+<% end %>
+

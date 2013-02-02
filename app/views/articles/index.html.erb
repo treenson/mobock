@@ -1,0 +1,24 @@
+<img src="http://54.248.218.60:9999/assets/mobock.jpg" width="100%">
+<br> <br>
+<%= link_to("새 글", {:action => 'new'}, :class => 'btn') %> 
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Post</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for article in @articles %>
+			<tr class="info">
+				<td> <%= article.id %> </td>
+				<td> 
+					<p> <font color = #FF5D5D size="3"> <%= article.title %> </font> </p>
+					<p> <%= raw article.content %> - <%= article.author %> </p>
+					<p> <%= article.created_at %> </p>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+<%= link_to("새 글", {:action => 'new'}, :class => 'btn') %>
